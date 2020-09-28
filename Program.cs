@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace apikeygen
@@ -11,7 +12,7 @@ namespace apikeygen
             Console.WriteLine();
 
             Console.Write("Tenant Id: ");
-            var tenantId = Console.ReadLine();
+            var tenantId = Console.ReadLine();            
             Console.WriteLine();
 
             Console.Write("Client Id: ");
