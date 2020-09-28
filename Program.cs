@@ -5,7 +5,7 @@ namespace apikeygen
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main()
         {
             Console.WriteLine("API Access Token Generator.");
             Console.WriteLine();
@@ -29,7 +29,7 @@ namespace apikeygen
             var authority = $"https://login.microsoftonline.com/{tenantId}";
             var clientCredential = new ClientCredential(clientId, clientSecret);
             var context = new AuthenticationContext(authority, true);
-            var result = context.AcquireTokenAsync(resourceId, clientCredential).GetAwaiter().GetResult();
+            var result = await context.AcquireTokenAsync(resourceId, clientCredential);
 
             Console.WriteLine("Access Token: " + result?.AccessToken);
         }
